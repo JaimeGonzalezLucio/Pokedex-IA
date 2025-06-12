@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Pokedex IA</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/icon-192.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="config/manifest.json">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+
+    <!-- Primary Meta Tags -->    
+    <meta name="title" content="Pokedex IA" />
+    <meta name="description" content="Explora el mundo Pokémon desde tu dispositivo, Usa la cámara para identificar criaturas y aprender de ellas" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://metatags.io/" />
+    <meta property="og:title" content="Pokedex IA" />
+    <meta property="og:description" content="Explora el mundo Pokémon desde tu dispositivo, Usa la cámara para identificar criaturas y aprender de ellas" />
+    <meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://metatags.io/" />
+    <meta property="twitter:title" content="Pokedex IA" />
+    <meta property="twitter:description" content="Explora el mundo Pokémon desde tu dispositivo, Usa la cámara para identificar criaturas y aprender de ellas" />
+    <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+
+    <!-- Meta Tags Generated with https://metatags.io -->
+
+</head>
+    <body>
+        
+        <div class="clouds">
+            <div class="cloud"></div>        
+            <div class="cloud"></div> 
+            <div class="cloud"></div> 
+        </div>
+
+        <div class="pokedex">
+            <div id="voiceButton" class="button-voice"></div>
+            <div class="buttons">
+                <span id="red-button"></span>
+                <span id="yellow-button"></span>
+                <span id="green-button"></span>
+            </div>
+
+            <div class="screen">
+                <div class="display">
+                    <img id="pokemon-img" style="width: 150px; display: none;" />
+                    <audio id="pokemon-audio" controls style="display: none;"></audio>
+                    <video id="camera" autoplay playsinline muted></video>
+                    <canvas id="canvas"></canvas>                    
+                    <p id="result">Presiona START para identificar el Pokémon</p>
+                </div>
+            </div>
+
+            <div class="options">
+                <div id="startButton" class="start-button" onclick="identifyPokemon()">Start</div>
+                <div class="select-buttons">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="select-arrow"></div>
+            </div>
+
+            <div class="hinge"></div>
+
+        </div>
+
+    </body>
+    
+    <script src="script.js"></script>
+
+</html>
