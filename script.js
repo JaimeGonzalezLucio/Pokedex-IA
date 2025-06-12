@@ -21,8 +21,22 @@ async function cargarModelo() {
 }
 
 async function iniciarCamara() {
-  const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-  video.srcObject = stream;
+  const constraints = {
+    video: {
+      facingMode: { exact: "environment" } 
+    },
+    audio: false
+  };
+
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    video.srcObject = stream;
+  } catch (error) {
+    console.error("No se pudo acceder a la cámara trasera, usando la predeterminada", error);
+
+    const fallbackStream = await navigator.mediaDevices.getUserMedia({ video: true });
+    video.srcObject = fallbackStream;
+  }
 }
 
 let isIdentifying = false;
